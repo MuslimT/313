@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <form class="form-inline">
             <b><!--/*@thymesVar id="user" type="ru.kata.spring.boot_security.demo.model.User"*/-->
-            <span class="navbar-text-xl text-white" th:text="${user.email}"></span></b>
+            <span class="navbar-text-xl text-white" th:text="${user.email()}"></span></b>
             <span class="navbar-text-xl text-white">&nbsp with roles: &nbsp</span>
             <span class="navbar-text-xl text-white" th:text="${user.getRolesAsString()}"></span>
         </form>
@@ -31,7 +31,7 @@
         <div class="col-lg-2 bg-white min-vh-100">
             <ul class="nav nav-pills flex-column">
                 <br/>
-                <div sec:authorize="${hasRole('ADMIN')}">
+                <div :authorize="${hasRole('ADMIN')}">
                     <li class="nav-item">
                         <a class="nav-link" href="/admin">Admin</a>
                     </li>

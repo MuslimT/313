@@ -44,7 +44,7 @@ public class AdminController {
     public String createUser(@ModelAttribute("user") User user, @RequestParam (value = "nameRoles", required = false) String roles)  {
         user.setRoles(roleService.getByName(roles));
         userService.saveUser(user);
-        return "redirect:/admin";
+        return "redirect:/new";
      }
 
     @GetMapping("/edit/{id}")
